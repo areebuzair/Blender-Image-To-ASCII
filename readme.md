@@ -24,8 +24,8 @@ This repository contains a Blender `.blend` file with a compositor node setup th
     ```
     Or, download the `Image_To_ASCII_Compositor.blend` file directly.
 2. Open the `Image_To_ASCII_Compositor` file in Blender.
-    Or, from any other Blender project, append the ```ASCII``` node group from the downloaded file.
-3. In the **Compositing** workspace, ensure that **Use Nodes** is enabled. Add the ```ASCII``` node group by pressing ```Shift A```  >```Group``` > ```ASCII```.
+    Or, from any other Blender project, append the `ASCII` node group from the downloaded file.
+3. In the **Compositing** workspace, ensure that **Use Nodes** is enabled. Add the `ASCII` node group by pressing `Shift A`  >`Group` > `ASCII`.
 4. Load an image of your choice as input by adding an **Image** node or using the **Render Layers** node for your rendered scenes.
 5. Adjust the ASCII pattern and resolution by tweaking the values in the node setup.
 6. Render the output, and you'll get the ASCII art image in the render result.
@@ -91,7 +91,7 @@ This ASCII node group features several input and output sockets that allow users
 
 ### 2. ASCII Art is Too Dark or Bright
 - **Description**: The ASCII art may appear darker or brighter than wanted.
-- **Solution**: Use a ```Brightness/Contrast``` node to fine-tune the input fill image.
+- **Solution**: Use a `Brightness/Contrast` node to fine-tune the input fill image.
 
 ---
 
@@ -111,10 +111,16 @@ This ASCII node group features several input and output sockets that allow users
 
 ---
 
-### 5. The edges are too prominent
+### 5. The Edges are too Prominent
 - **Description**: The egdes bleed into the main image.
 - **Solution**: Adjust the edge delimiters.
 ![Fix edges](<Readme-Images/Fix Edges.webp>)
+
+---
+
+### 6. Transparent Final Render
+- **Description**: The final render is transparent.
+- **Solution**: Make sure [fillASCII.png](fillASCII.png) and [edgesASCII.jpg](edgesASCII.jpg) are next to the `Image_To_ASCII_Compositor.blend` file.
 
 ## Contributing
 
