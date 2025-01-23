@@ -2,6 +2,8 @@
 ![Demo Picture](Readme-Images/ASCII_Demo.jpg)
 This repository contains a Blender `.blend` file with a compositor node setup that converts images to ASCII art. The node setup is versatile and can be adjusted for different resolutions (in powers of 2 i.e. 128, 256, 512 etc.) and output styles.
 
+***[DOWNLOAD](https://github.com/areebuzair/Blender-Image-To-ASCII/raw/refs/heads/main/Image_To_ASCII_Compositor.blend)***
+
 ## Features
 
 - Converts any input image into ASCII art.
@@ -22,7 +24,7 @@ This repository contains a Blender `.blend` file with a compositor node setup th
     ```bash
     git clone https://github.com/areebuzair/Blender-Image-To-ASCII.git
     ```
-    Or, download the `Image_To_ASCII_Compositor.blend` file directly.
+    Or, download the `Image_To_ASCII_Compositor.blend` file directly from [here](https://github.com/areebuzair/Blender-Image-To-ASCII/blob/main/Image_To_ASCII_Compositor.blend).
 2. Open the `Image_To_ASCII_Compositor` file in Blender.
     Or, from any other Blender project, append the `ASCII` node group from the downloaded file.
 3. In the **Compositing** workspace, ensure that **Use Nodes** is enabled. Add the `ASCII` node group by pressing `Shift A`  >`Group` > `ASCII`.
@@ -37,8 +39,10 @@ This ASCII node group features several input and output sockets that allow users
 ### Inputs
 
 - **Color* (fill)**: This input takes an image, and its luminosity is used to create the fill portion of the ASCII art. The tonal variations in the image determine the density of the ASCII characters.
+  ![ASCII Fill](<Readme-Images/ASCII Fill.webp>)
 
 - **Color* (gradient)**: Accepts an image input to generate the ASCII art's gradient elements, such as slashes, dashes, and vertical bars. Using a mist pass is recommended for optimal results, though any image can work. This gradient is used to render the edges.
+  ![Gradient](Readme-Images/Gradient.webp)
 
 - **Color (edge)**: This input uses the provided image to compute the edges by analyzing the differences between Gaussian blurs, resulting in clean edge detection.
 
@@ -51,6 +55,7 @@ This ASCII node group features several input and output sockets that allow users
 - **Normal**: Provides an input for a normal map, which is used to compute edges based on the differences in surface normals. This is ideal for capturing subtle geometry-based details.
 
 - **Normal Edge Delimiter**: Defines the influence of the normal map on edge detection.
+  ![Edge Mask](Readme-Images/Edges.webp)
 
 - **Render Width***: Sets the horizontal resolution of the ASCII image. This value must be a power of two to ensure proper scaling and rendering. It must match the render resolution width.
 
@@ -68,12 +73,6 @@ This ASCII node group features several input and output sockets that allow users
 - **Image Gradient**: This output provides the image gradient, which can be useful for custom edge detection workflows or advanced effects.
 
 - **Edge Mask**: A mask highlighting the detected edges in the image, useful for isolating edge details for further processing, or for combining multiple ASCII arts.
-
-![ASCII Fill](<Readme-Images/ASCII Fill.webp>)
-
-![Edge Mask](Readme-Images/Edges.webp)
-
-![Gradient](Readme-Images/Gradient.webp)
 
 ![Final Output](<Readme-Images/Final Output.webp>)
 
@@ -114,7 +113,7 @@ This ASCII node group features several input and output sockets that allow users
 ### 5. The Edges are too Prominent
 - **Description**: The egdes bleed into the main image.
 - **Solution**: Adjust the edge delimiters.
-![Fix edges](<Readme-Images/Fix Edges.webp>)
+  ![Fix edges](<Readme-Images/Fix Edges.webp>)
 
 ---
 
